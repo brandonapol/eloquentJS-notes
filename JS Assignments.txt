@@ -1,0 +1,333 @@
+﻿Teach HTML as nodes!!!
+
+
+
+
+
+
+
+
+1. What is JS? What is programming?
+   1. Open ended, unique tasks: calculator, versus…. ???
+   2. How a language works; computer 'reads' your code
+   3. Visual interfaces vs language interfaces
+2. Values, Types, and Operators
+   1. Bits (two valued things, 0 or 1) 
+      1. Intro to Binary numbers
+      2. A sea of bits… is computer memory
+      3. Invoke it's name to access the value. (Or invoke the address in memory, but names are like mailing addresses compared to longitude and latitude)
+   2. Comments?
+   3. Data Types!!!
+      1. Numbers
+         1. How decimals work
+         2. Arithmetic operations
+         3. Pemdas
+         4. NaN; Infinity
+      2. Strings
+         1. Discuss unicode vs ASCII
+         2. ' " `
+         3. Escape characters
+         4. " \" "
+         5. Concatenation
+         6. Template literals with backticks ${}
+      3. Booleans
+         1. comparisons 
+         2. Basic boolean logic
+         3. Logical Operators (&& and ||)
+      4. Null and undefined
+      5. Type conversions… automatic!
+         1. 8 * null
+         2. "5" - 1
+         3. "5" + 1
+         4. "five" * 2
+         5. false == 0
+         6. NaN operations return more NaN answers
+         7. null == undefined
+         8. null == 0
+         9. Can get away from these issues with === and !== for precision equality
+         10. console.log("Michael" || "user") => "Michael"
+         11. "short circuit evaluation"
+3. Program Structure
+   1. Expressions
+      1. 1;
+      2. !false;
+   2. Bindings
+      1. let ten = 10;
+      2. IMAGINE BINDINGS AS TENTACLES RATHER THAN BOXES. A PROGRAM CAN ONLY ACCESS VALUES IT HAS ACCESS TO.
+      3. var name = "Ada"; const greeting = "Hello "; console.log(greeting + name);
+      4. var is oldest way of declaring. Let should be used instead.
+      5. const is short for constant; permanent binding
+      6. You can declare a binding or variable without giving it a value
+   3. Binding names
+      1. Cannot start with a digit (can have later)
+      2. $ or _ ok, no other punctuation
+      3. Look out for keywords:
+         1. break case catch class const continue debugger default delete do else enum exports extends false……..
+   4. Environment
+      1. Collection of bindings and their values; includes standard language library
+   5. Functions
+      1. Many values in the default environment are function data types. Functions are collections of instructions that are bound to a value; you can also think of them as 'wrapped' in a value. To make it work, we have to apply it.
+         1. You can think of it as a machine
+         2. Executing a function is called 'invoking' calling or applying
+         3. Sometimes functions take data in and do stuff to them; that data is called an argument
+      2. console.log()
+      3. Returning values
+         1. Side effects vs returning things
+         2. console.log(Math.max(2, 4));
+         3. console.log(Math.min(2, 4) + 100));
+   6. Control Flow
+      1. Executed like a story, top to bottom
+      2. Straight Line
+   7. Conditional Execution
+      1. Branching roads! Which to go down? 
+      2. Not a straight line; like a fork, or separate lanes that end in the same location
+      3. if
+      4. else
+      5. if else if else
+      6. use let number = 10 and then if conditions to filter the number
+   8. Loops!!!
+      1. could console.log something a bunch of times… but our goal is less work not more work
+      2. Looping goes back to a previous point in our code and does it again
+      3. steal code from page 30
+      4. Make an infinite loop on purpose to help studetns Not Be Scared (it won't break your computer unless you're using an IBM 1401)
+      5. While loops vs do while loops
+   9. Indentation and JS Code Styling
+      1. https://google.github.io/styleguide/jsguide.html#formatting
+   10. for loops
+      1. Let keyword!
+   11. Breaking out of a loop pt II 
+      1. break;
+      2. continue = skips to next iteration
+   12. Using bindings efficiently
+      1. +=, ++
+   13. Switch statement
+   14. Binding cases
+      1. camelCase
+      2. snake_case
+      3. PascalCase
+      4. kebab-case
+      5. Sometimes we will see capital letters at the front - this has special meaning we will get to Later
+   15. Comments?
+   16. Exercises:
+      1. Loop a triangle (mario problem)
+      2. FizzBuzz
+      3. ChessBoard printout
+4. Functions
+   1. User-written functions exist for processes that don't exist already
+      1. Keeps languages lightweight
+      2. Gives us freedom
+      3. Makes us not have to memorize 20,000 different functions and their subtleties
+   2. Function is… A data type! Binding
+      1. const square = function(x) {
+ return x * x;
+};
+
+console.log(square(12));
+      2. Arguments and Parameters: 
+   1. A parameter is a variable in a function definition. It is a placeholder and hence does not have a concrete value. An argument is a value passed during function invocation.
+   3. Bindings and Scope (Mini environments!!)
+   1. global vs local
+   2. BAD CODE EXAMPLE
+   3. 'block'
+   4. Scope can 'look out'
+   5. Nested scope (local in local) also called 'lexical scoping'
+   6. Overwriting bindings
+   1. x = 5
+x = 7
+      4. Functions as Values
+      1. This is a bad idea
+      2. Different than higher-order functions
+      5. Other function notations
+      1. Declaration notation
+      1. function square(x) {
+ return x * x;
+};
+      2. console.log("The future says:", future());
+
+function future() {
+ return "You'll never have flying cars";
+}
+
+Functions get put at the top of your code when compiled; so this will still work
+         2. Arrow functions
+         1. with params p. 46
+         3. Call Stack
+         1. p. 47, recursion depth, stack size, knowing 'where' the functions and stuff exist
+         4. Optional Arguments
+         1. function square(x) { return x * x }
+square(4, true, "hedgehog")
+
+No error here
+         2. "JavaScript is extremely broad-minded about the number of arguments you pass to a function. If you pass too many, the extra ones are ignored. If you pass too few, the missing parameters get assigned the value undefined." -47
+            5. Closures
+            1. You can bind functions inside of other functions, and they'll only be available within the first function
+            2. This gets MUCH more useful when we're doing web development
+            3. Is a way of 'saving' values in functions
+            1. Has to do with stack heap etc; review Fireship video on closures
+            4. "it saves it but doesn't do anything observable yet" - returning a return statement
+            6. Recursion
+            1. p50
+            2. Use recursion to show an exponent function vs a regular way of declaring it
+            3. We'll review Closures and Recursion in later sections
+            7. Elegant Code and refactoring functions
+            1. Don't add cleverness until you're absolutely sure you'll need it
+            8. Functions and Side Effects
+            1. Pure functions
+            2. 'helper functions' just as a vocab term
+            3. Side effects vs return value functions
+            9. Good HW assignments here
+            5. Objects and Arrays
+            1. 'data sets'
+            1. How data is stored in computer memory
+            2. How arrays are stored in computer memory
+            3. How we access a specific location of a data set
+            1. dots vs []
+            2. String/array properties
+            1. .length()
+            1. console.log(document.getElementsByClassName("ul").length)
+            2. console.log(document.getElementsByClassName("ul")["length"])
+            3. console.log(document.getElementsByClassName("ul").length())
+            2. Check CT notes for this and also W3
+            3. .push
+            4. .pop
+            5. delete
+            3. Object types
+            1. Arbitrary groupings of attributes
+            2. Uses {} (like python dict)
+            3. Difference between 'expression' and 'object' declarations with {}
+            4. using delete
+            5. keys and values as keys to lockers and their content
+            6. What's going on under the hood with keys and values?
+            7. .keys
+            8. .assign() 
+            9. Arrays are just objects specialized for storing sequences of things
+            4. Mutability
+            1. Arrays are immutable (so are other primitives)… make a copy
+            2. Objects are mutable
+            5. Looping over arrays
+            1. for (let i = 0; i < arr.length; i++) {
+ let entry = arr[i];
+ // do some stuff
+}
+            2. for (let item of arr) {
+ console.log(`${entry.events.length} events.`);
+}
+               6. More string methods
+               1. shift
+               2. unshift
+               3. indexOf
+               4. lastIndexOf (searches from the back; does -2 work?)
+               5. slice()
+               6. concat
+               7. Can't add properties to a string
+               8. trim
+               9. .padstart()
+               10. .split, .join.
+               11. .repeat
+               12. Spreads and 'rest parameters' p.74
+               7. Math object
+               1. We use this so there's not too many bindings; global bindings 'pollute' the namespace
+               2. Careful not to overwrite math names!
+               3. .cos, .sin, .tan, .PI (not a function!), random, 
+               4. .floor, .ceil, .round
+               8. range() function?
+               9. Destructuring
+               1. p.76
+               10. JSON
+               1. JUST object stuff! Objects and arrays! All double quotes as well
+               2. No comments, functions, nothing that actually requires computation
+               3. JSON.stringify() and JSON.parse() converts data to and from this format; stringify makes JSON, parse makes a string
+               6. Higher-Order Functions
+               1. Two functions…
+               1. let total = 0, count = 1;
+while (count <= 10) {
+ total += count;
+ count += 1;
+}
+console.log(total);
+               2. console.log(sum(range(1, 10)));
+               3. Which is more likely to have a bug?
+               4. Abstraction (still exists in FP!)- recipes as an example
+               5. use code from 85
+               6. Abstracting over actions rather than values; 'higher order' comes from math
+               7. Filter, map, reduce - talk about pure functions here (and callbacks a little)
+               8. forEach(element, index, arrayName) - same args for most higher order methods
+               9. https://www.youtube.com/watch?v=rRgD1yVwIvE comparing looping vs higher order builtins
+                  7. More Objects
+                  1. Classes
+                  1. Methods
+                  2. State
+                  2. Four pillars of OOP: Encapsulation, abstraction, polymorphism, inheritance
+                  3. Encapsulation
+                  1. Interfaces
+                  1. Public vs private state
+                  4. Thinking of objects as… objects
+                  1. You can just like, add more detail as you go
+                  2. p. 98
+                  3. this keyword
+                  4. Review this
+                  5. Prototypes
+                  1. Review this too
+                  6. Classes
+                  1. Constructors & Prototypes
+                  2. this keyword
+                  3. Constructors are capitalized
+                  7. Maps vs objects
+                  1. Objects only support strings!
+                  2. Maps support any data type - but must create a map object in particular `Map()` (same as Object.create(null)
+                  3. JSON map vs object?
+                  8. Polymorphism
+                  1. Code works on any code that supports the expected interface
+                  9. Symbols
+                  1. Like enums in Python
+                  2. Define acceptable data types given to a function, more or less
+                  10. Iterables
+                  1. JavaScript generators; advanced concept
+                  2. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators
+                  3. https://www.programiz.com/javascript/getter-setter
+                  11. Inheritance
+                  1. extends etc
+                  2. Based on some other class rather than the Object prototype!!!
+                  3. Superclass vs subclass
+                  4. super keyword calls the superclass's constructor, has it's own constructor for the subclass
+                  5. can also use super to call method from superclass's method class, as opposed to this.set which would call the subclass's setter method
+                  6. Creates more tangle! Is opposite of abstraction, but is quicker
+                  12. instanceOf() 
+                  1. checks objects against other objects
+                  2. Also checks superclasses
+                  8. Bugs and Errors
+                  1. 'JavaScript's looseness is a hindrance'
+                  2. Strict mode
+                  3. Types
+                  1. Type-checking version of JS is TypeScript
+                  4. Tests
+                  5. Debugging steps
+                  1. Breakpoints and debuggers
+                  6. Try - Catch
+                  7. Assertions
+                  9. Regex
+                  1. Might use YouTube for this one
+                  2. Use regex101 again
+                  3. Do the same questions and walkthroughs as the Python docs
+                  4. Regex Golf
+                  10. Modules
+                  1. Building blocks to keep code organized
+                  1. Modules, interfaces, dependencies
+                  2. NPM packages
+                  3. Application design and design patterns
+                  1. Point out the book
+                  4. SOLID principles
+                  5. MVC?
+                  11. Asynchronous
+                  1. When to use callbacks
+                  2. Promises
+                  3. .then and .catch, resolve and reject
+                  4. Networking errors
+                  5. TODO: Update async content
+                  12. JS and the Browser (Intro to the Internet)
+                  13. DOM
+                  14. Events
+                  15. Drawing
+                  16. Forms
+                  17. NodeJS
+                  18. Performance
